@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding: 30px;
+  border-bottom: solid 3px purple;
+}
+
+.navLinks {
+  text-decoration: none;
+  margin-right: 15px;
+  color: purple;
+  font-size: 20px;
+  font-weight: bold;
+}
+.navActiveLink {
+  composes: navLinks;
+  color: blue;
+}

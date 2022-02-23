@@ -13,20 +13,23 @@ const ContactList = () => {
   const items = useSelector(state => state.contacts.items);
   const filter = useSelector(state => state.contacts.filter);
   const newItems = filterContact(items, filter);
-  console.log(items)
-   return  newItems.length ? (
-    <table> 
-       {newItems.map(({ name, id, number }) => (
-            <tr key={id}>
-              <td>{name} :</td>
-              <td>{number}</td>
-              <td> <button  onClick={() => {
-                dispatch(removeContact(id));
-              }}>Delete</button></td>
-            </tr>
-       ))}
-    </table>
-   ) : null;
+
+   return 
+//    newItems.length ? (
+//     <table>
+//       <tbody> 
+//         {newItems.map(({ name, id, number }) => (
+//               <tr key={id}>
+//                 <td>{name} :</td>
+//                 <td>{number}</td>
+//                 <td> <button  onClick={() => {
+//                   dispatch(removeContact(id));
+//                 }}>Delete</button></td>
+//               </tr>
+//         ))}
+//       </tbody>
+//    </table>   
+//    ) : null;
  };
  
  export default ContactList;
