@@ -11,14 +11,13 @@ export default function AppBar() {
                   className={s.navLinks} 
                   activeClassName={s.navActiveLink} >Home
                </NavLink>
-
                <NavLink to="/contacts" 
                   className={s.navLinks}
                   activeClassName={s.navActiveLink} >Contacts
                </NavLink>
             </div>
 
-             <div>
+            <div>
                <NavLink to="/register" 
                   className={s.navLinks}
                   activeClassName={s.navActiveLink} >Register
@@ -28,6 +27,16 @@ export default function AppBar() {
                   activeClassName={s.navActiveLink} >Login
                </NavLink>
             </div>
+
+            <div className={s.userMenu}>
+               <h3 className={s.userMenuEmail}>Email
+               </h3>
+               <NavLink to="/userMenu" 
+                  className={s.navLinks}
+                  activeClassName={s.navActiveLink} >Logout
+               </NavLink>
+            </div>
+
          </nav>
       </header>
    )

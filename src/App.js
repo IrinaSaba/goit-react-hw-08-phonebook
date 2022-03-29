@@ -5,9 +5,9 @@ import './App.scss';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import HomeView from './Views/HomeView';
-import RegisterView from './components/RegisterView/RegisterView.jsx';
-import LoginView from './components/LoginView/LoginView.jsx';
-import ContactsView from './components/ContactsView/ContactsView.jsx';
+import RegisterView from './Views/RegisterView/RegisterView.jsx';
+import LoginView from './Views/LoginView/LoginView.jsx';
+import ContactsView from './Views/ContactsView/ContactsView.jsx';
 
 // const HomePage = lazy(()=> import("./Views/HomePage"))
 // const MoviesPages = lazy(()=> import("./Views/MoviesPages"))
@@ -27,17 +27,19 @@ export default function App() {
         fallback={<h1>Wait a second, look at the sky during loading...</h1>}
       > */}
       <Switch>
-        <Route exact path="/">
-          {/* <HomeView /> */}
-        </Route>
         <Route path="/register">
           <RegisterView />
         </Route>
         <Route path="/login">
           <LoginView />
         </Route>
-        <Route path="/contacts">ContactsView</Route>
-
+        <Route path="/contacts">{/* <ContactsView /> */}</Route>
+        {/* <Route path="/usermenu">
+          <UserMenu />
+        </Route> */}
+        <Route exact path="/">
+          {/* <HomeView /> */}
+        </Route>
         <Redirect to="/" />
       </Switch>
       {/* </Suspense> */}

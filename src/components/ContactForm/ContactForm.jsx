@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch , useSelector} from "react-redux";
-import {addContact} from '../../redux/contacts-operations'
+import {addContact} from '../../redux/contacts/contacts-operations'
 // import actions from './contacts-actions';
 
 export default function ContactForm() {
