@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { logIn } from "redux/auth/auth-operations";
+import { useDispatch } from "react-redux";
+
 
 export default function LoginForm() {
    const  [email, setEmail] = useState("");
    const  [password, setPassword] = useState("");
  
-   // const dispatch = useDispatch();
+   const dispatch = useDispatch();
    // const items = useSelector(state => state.contacts.items);
  
    const handleChange = event => {
@@ -25,7 +28,7 @@ export default function LoginForm() {
  
     const  handleSubmit = (event) => {
      event.preventDefault();
- 
+     dispatch(logIn({email, password}))  
    //   if (items.find(contact =>contact.name.toLowerCase().includes(newContact.name.toLowerCase()))) {
    //     clearFields();
    //         return alert(`I have your contact already Sergey ))), i would call you`);

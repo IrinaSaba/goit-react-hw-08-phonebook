@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { register } from "redux/auth/auth-operations";
+
 
 export default function LoginForm() {
    const  [name, setName] = useState("");
@@ -31,11 +33,8 @@ export default function LoginForm() {
  
     const  handleSubmit = (event) => {
      event.preventDefault();
-     const newUser = {
-      name,
-      email,
-      password
-    };
+     dispatch(register({name, email, password})) 
+    
  
    //   if (items.find(contact =>contact.name.toLowerCase().includes(newContact.name.toLowerCase()))) {
    //     clearFields();
@@ -48,9 +47,7 @@ export default function LoginForm() {
    };
    
    return (
-       <form  
-      //  onSubmit={handleSubmit}
-       >
+       <form onSubmit={handleSubmit}>
       <label > Name
          <input
             type="text"
