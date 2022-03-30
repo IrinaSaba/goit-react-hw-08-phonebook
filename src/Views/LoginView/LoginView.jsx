@@ -40,9 +40,7 @@ export default function LoginForm() {
    };
    
    return (
-       <form  
-      //  onSubmit={handleSubmit}
-       >
+       <form onSubmit={handleSubmit}>
        <label > Email
              <input
                 type="email"

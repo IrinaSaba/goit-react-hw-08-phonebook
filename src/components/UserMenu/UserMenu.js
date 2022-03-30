@@ -1,10 +1,20 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { authSelectors, authOperations } from '../../redux/auth';
-// import defaultAvatar from './defaultAvatar'
+// import defaultAva from "../img/avatar.png";
+import { logOut } from '../../redux/auth/auth-operations';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 export default function UserMenu() {
-  const avatar = defaultAva;
+  // const avatar = defaultAva;
   const dispatch = useDispatch();
-  const userName = useSelector(getUserName);
-  const theme = useSelector(state => state.auth.theme);
+  const userName = useSelector(authSelectors.getUserName);
+  return (
+    <div>
+      {/* <img src={avatar} alt="" width="15" /> */}
+      <p>Welcome, {userName}</p>
+      <button type="button" onClick={e => dispatch(logOut())}>
+        LogOut
+      </button>
+    </div>
+  );
 }

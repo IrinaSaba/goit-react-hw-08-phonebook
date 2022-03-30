@@ -1,4 +1,4 @@
-import AppBar from './components/AppBar/AppBar.jsx';
+import AppBar from './components/AppBar/AppBar.js';
 // import { lazy, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.scss';

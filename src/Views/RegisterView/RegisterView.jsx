@@ -34,8 +34,6 @@ export default function LoginForm() {
     const  handleSubmit = (event) => {
      event.preventDefault();
      dispatch(register({name, email, password})) 
-    
- 
    //   if (items.find(contact =>contact.name.toLowerCase().includes(newContact.name.toLowerCase()))) {
    //     clearFields();
    //         return alert(`I have your contact already Sergey ))), i would call you`);
