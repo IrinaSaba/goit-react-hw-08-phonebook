@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { register } from "redux/auth/auth-operations";
 
 
-export default function LoginForm() {
+export default function RegisterForm() {
    const  [name, setName] = useState("");
    const  [email, setEmail] = useState("");
    const  [password, setPassword] = useState("");
@@ -23,6 +23,8 @@ export default function LoginForm() {
        case "password" :
          setPassword(value)
          break;
+         default:
+         return;
      }
    }
     const clearFields = () => {
@@ -33,7 +35,13 @@ export default function LoginForm() {
  
     const  handleSubmit = (event) => {
      event.preventDefault();
-     dispatch(register({name, email, password})) 
+     const newUser = {
+      name,
+      email,
+      password,
+    };
+     dispatch(register(newUser));
+    //  console.log(newUser); 
    //   if (items.find(contact =>contact.name.toLowerCase().includes(newContact.name.toLowerCase()))) {
    //     clearFields();
    //         return alert(`I have your contact already Sergey ))), i would call you`);

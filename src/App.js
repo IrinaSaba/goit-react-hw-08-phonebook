@@ -27,16 +27,15 @@ export default function App() {
         fallback={<h1>Wait a second, look at the sky during loading...</h1>}
       > */}
       <Switch>
-        <Route path="/register">
+        <Route path="/register" restricted>
           <RegisterView />
         </Route>
         <Route path="/login">
           <LoginView />
         </Route>
-        <Route path="/contacts">{/* <ContactsView /> */}</Route>
-        {/* <Route path="/usermenu">
-          <UserMenu />
-        </Route> */}
+        <Route path="/contacts" restricted>
+          {/* <ContactsView /> */}
+        </Route>
         <Route exact path="/">
           {/* <HomeView /> */}
         </Route>

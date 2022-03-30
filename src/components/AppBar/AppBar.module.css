@@ -1,0 +1,6 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: solid 3px purple;
+}

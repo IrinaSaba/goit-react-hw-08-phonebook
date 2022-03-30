@@ -19,6 +19,8 @@ export default function LoginForm() {
        case "password" :
          setPassword(value)
          break;
+         default:
+         return;
      }
    }
     const clearFields = () => {
@@ -28,7 +30,11 @@ export default function LoginForm() {
  
     const  handleSubmit = (event) => {
      event.preventDefault();
-     dispatch(logIn({email, password}))  
+     const user = {
+      email,
+      password,
+    };
+     dispatch(logIn(user))  
    //   if (items.find(contact =>contact.name.toLowerCase().includes(newContact.name.toLowerCase()))) {
    //     clearFields();
    //         return alert(`I have your contact already Sergey ))), i would call you`);

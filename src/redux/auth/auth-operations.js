@@ -10,28 +10,30 @@ const token = {
   },
 };
 
-axios.defaults.baseURL = 'http://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-export const register = createAsyncThunk('auth/register', async credentials => {
-  try {
-    const { data } = await axios.post('/users/signup', credentials);
-    token.set(data.token);
-    return data;
-  } catch (error) {}
-});
-
-export const logIn = createAsyncThunk('auth/login', async credentials => {
-  try {
-    const { data } = await axios.post('/users/login', credentials);
-    return data;
-  } catch (error) {}
-});
-
-export const logOut = createAsyncThunk(
-  'auth/logout',
-  async (_, credentials) => {
+export const register = createAsyncThunk(
+  'auth/register',
+  async (newUser, thunkApi) => {
     try {
-      await axios.post('/users/logout');
+      const { data } = await axios.post('/users/signup', newUser);
+      token.set(data.token);
+      return data;
     } catch (error) {}
   }
 );
+
+export const logIn = createAsyncThunk('auth/login', async (user, thunkApi) => {
+  try {
+    const { data } = await axios.post('/users/login', user);
+    token.set(data.token);
+    return console.log(data);
+  } catch (error) {}
+});
+
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
+  try {
+    await axios.post('/users/logout');
+    token.unset();
+  } catch (error) {}
+});
