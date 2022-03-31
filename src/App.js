@@ -9,6 +9,8 @@ import RegisterView from './Views/RegisterView/RegisterView.jsx';
 import LoginView from './Views/LoginView/LoginView.jsx';
 import ContactForm from './components/ContactForm/ContactForm.jsx';
 import ContactList from './components/ContactList/ContactList.jsx';
+import { fetchCurrentUser } from './redux/auth/auth-operations';
+import ContactView from 'Views/ContactView/ContactView.jsx';
 
 // const HomePage = lazy(()=> import("./Views/HomePage"))
 // const MoviesPages = lazy(()=> import("./Views/MoviesPages"))
@@ -17,9 +19,10 @@ import ContactList from './components/ContactList/ContactList.jsx';
 export default function App() {
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    //   dispatch(getContacts());
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
 
   return (
     <>
@@ -35,8 +38,7 @@ export default function App() {
           <LoginView />
         </Route>
         <Route path="/contacts">
-          {/* <ContactList /> */}
-          {/* <ContactForm /> */}
+          <ContactView />
         </Route>
         <Route exact path="/">
           {/* <HomeView /> */}
