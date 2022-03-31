@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import {deleteContact} from '../../redux/contacts-actions'
+// import {deleteContact} from '../../redux/contacts-actions'
 import { removeContact } from "redux/contacts/contacts-operations";
+import { useEffect } from 'react';
 
 const filterContact = (items, filter) => {
   return items.filter(contact =>
@@ -13,6 +14,11 @@ const ContactList = () => {
   const items = useSelector(state => state.contacts.items);
   const filter = useSelector(state => state.contacts.filter);
   const newItems = filterContact(items, filter);
+
+  // useEffect(() => {
+  //     dispatch(getContacts());
+  // }, [dispatch]);
+
 
    return ( 
      newItems.length ? (

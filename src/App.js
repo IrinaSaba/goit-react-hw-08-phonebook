@@ -1,20 +1,16 @@
 import AppBar from './components/AppBar/AppBar.js';
-// import { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.scss';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import HomeView from './Views/HomeView';
-import RegisterView from './Views/RegisterView/RegisterView.jsx';
-import LoginView from './Views/LoginView/LoginView.jsx';
-import ContactForm from './components/ContactForm/ContactForm.jsx';
-import ContactList from './components/ContactList/ContactList.jsx';
 import { fetchCurrentUser } from './redux/auth/auth-operations';
-import ContactView from 'Views/ContactView/ContactView.jsx';
 
-// const HomePage = lazy(()=> import("./Views/HomePage"))
-// const MoviesPages = lazy(()=> import("./Views/MoviesPages"))
-// const MovieDetailsPage = lazy(()=> import( './components/MoviesDetailsPage/MoviesDetailsPage'))
+const RegisterView = lazy(() =>
+  import('./Views/RegisterView/RegisterView.jsx')
+);
+const LoginView = lazy(() => import('./Views/LoginView/LoginView.jsx'));
+const ContactView = lazy(() => import('./Views/ContactView/ContactView.jsx'));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -27,25 +23,25 @@ export default function App() {
   return (
     <>
       <AppBar />
-      {/* <Suspense
+      <Suspense
         fallback={<h1>Wait a second, look at the sky during loading...</h1>}
-      > */}
-      <Switch>
-        <Route path="/register">
-          <RegisterView />
-        </Route>
-        <Route path="/login">
-          <LoginView />
-        </Route>
-        <Route path="/contacts">
-          <ContactView />
-        </Route>
-        <Route exact path="/">
-          {/* <HomeView /> */}
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-      {/* </Suspense> */}
+      >
+        <Switch>
+          <Route path="/register">
+            <RegisterView />
+          </Route>
+          <Route path="/login">
+            <LoginView />
+          </Route>
+          <Route path="/contacts">
+            <ContactView />
+          </Route>
+          <Route exact path="/">
+            {/* <HomeView /> */}
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </Suspense>
     </>
   );
 }
