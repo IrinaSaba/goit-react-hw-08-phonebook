@@ -7,14 +7,15 @@ import { useEffect } from 'react';
 import HomeView from './Views/HomeView';
 import RegisterView from './Views/RegisterView/RegisterView.jsx';
 import LoginView from './Views/LoginView/LoginView.jsx';
-import ContactsView from './Views/ContactsView/ContactsView.jsx';
+import ContactForm from './components/ContactForm/ContactForm.jsx';
+import ContactList from './components/ContactList/ContactList.jsx';
 
 // const HomePage = lazy(()=> import("./Views/HomePage"))
 // const MoviesPages = lazy(()=> import("./Views/MoviesPages"))
 // const MovieDetailsPage = lazy(()=> import( './components/MoviesDetailsPage/MoviesDetailsPage'))
 
 export default function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(getContacts());
@@ -33,7 +34,10 @@ export default function App() {
         <Route path="/login">
           <LoginView />
         </Route>
-        <Route path="/contacts">{/* <ContactsView /> */}</Route>
+        <Route path="/contacts">
+          {/* <ContactList /> */}
+          {/* <ContactForm /> */}
+        </Route>
         <Route exact path="/">
           {/* <HomeView /> */}
         </Route>

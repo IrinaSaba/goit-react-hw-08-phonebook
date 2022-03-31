@@ -15,21 +15,21 @@ const ContactList = () => {
   const newItems = filterContact(items, filter);
 
    return 
-//    newItems.length ? (
-//     <table>
-//       <tbody> 
-//         {newItems.map(({ name, id, number }) => (
-//               <tr key={id}>
-//                 <td>{name} :</td>
-//                 <td>{number}</td>
-//                 <td> <button  onClick={() => {
-//                   dispatch(removeContact(id));
-//                 }}>Delete</button></td>
-//               </tr>
-//         ))}
-//       </tbody>
-//    </table>   
-//    ) : null;
+  //  newItems.length ? (
+  //   <table>
+  //     <tbody> 
+  //       {newItems.map(({ name, id, number }) => (
+  //             <tr key={id}>
+  //               <td>{name} :</td>
+  //               <td>{number}</td>
+  //               <td> <button  onClick={() => {
+  //                 dispatch(removeContact(id));
+  //               }}>Delete</button></td>
+  //             </tr>
+  //       ))}
+  //     </tbody>
+  //  </table>   
+  //  ) : null;
  };
  
  export default ContactList;
