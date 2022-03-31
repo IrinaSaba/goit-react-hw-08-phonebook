@@ -55,6 +55,7 @@ export default function ContactForm() {
                required
                value={name}
                onChange={handleChange}
+               placeholder='name'
             />
       </label>
       <br></br>
@@ -67,6 +68,7 @@ export default function ContactForm() {
             required
             value={number}
             onChange={handleChange}
+            placeholder='phone number'
             />
       </label>
       <br></br>

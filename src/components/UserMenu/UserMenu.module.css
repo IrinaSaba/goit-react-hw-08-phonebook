@@ -1,0 +1,24 @@
+.userMenu {
+  display: flex;
+  align-items: center;
+}
+.userMenuEmail {
+  font-style: italic;
+  margin-right: 15px;
+  color: purple;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+img {
+  margin-right: 5px;
+}
+button {
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
