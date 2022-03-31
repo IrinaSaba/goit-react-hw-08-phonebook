@@ -15,11 +15,6 @@ const ContactList = () => {
   const filter = useSelector(state => state.contacts.filter);
   const newItems = filterContact(items, filter);
 
-  // useEffect(() => {
-  //     dispatch(getContacts());
-  // }, [dispatch]);
-
-
    return ( 
      newItems.length ? (
     <table>

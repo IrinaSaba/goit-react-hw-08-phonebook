@@ -7,8 +7,11 @@ import authSelectors from '../../redux/auth/auth-selectors';
 
 export default function ContactView() {
    // const dispatch = useDispatch();
- 
-   // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+   
+  // useEffect(() => {
+  //     dispatch(getContacts());
+  // }, [dispatch]);
+
    return (
       <div>
          <div>
