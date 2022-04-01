@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/246.5c391efb.chunk.css","mappings":"AAAA,kCAGE,YAAa,CACb,cAAe,CAHf,iBAAkB,CAIlB,eAAiB,CAHjB,iBAKF","sources":["Views/ContactView/ContactView.module.css"],"sourcesContent":[".userMenuTitle {\r\n  font-style: italic;\r\n  margin-right: 15px;\r\n  color: purple;\r\n  font-size: 30px;\r\n  font-weight: bold;\r\n\r\n}\r\n"],"names":[],"sourceRoot":""}
