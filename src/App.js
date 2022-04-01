@@ -18,7 +18,9 @@ const ContactView = lazy(() => import('./Views/ContactView/ContactView.jsx'));
 
 export default function App() {
   const dispatch = useDispatch();
-  const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+  const isFetchingCurrentUser = useSelector(
+    authSelectors.getIsFetchingCurrentUser
+  );
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
